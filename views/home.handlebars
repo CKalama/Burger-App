@@ -3,24 +3,44 @@
 <body class = "background"> </body>
 
 
+
+
+
+<form class = "create-burger">
+    
 <input placeholder="Type in a Burger!"></input>
 
-<button>Save a New Burger!</button>
+<button type="submit">Save a New Burger!</button>
+
+</form>
+
 
 {{!-- {{#each burgers}}
     <h1 class="yourClass">{{this.name}}</h1>
 
 {{/each}} --}}
-
+<h1>Here's the Menu!</h1>
 <ul>
 {{#each burgers}}
-<li>
+    {{#unless devoured}}
+        {{>  burger-block devoured = false}}
+    {{/unless}}
+{{/each}}
+{{!-- <li>
     <p>Burger Name: {{this.name}}</p>
     <p>Devoured: {{this.devoured}}</p>
     
 </li>
-{{/each}}
+{{/each}} --}}
 </ul>
+
+<h1>All Done!</h1>
+{{#each burgers}}
+    {{#if devoured}}
+        {{>burger-block devoured = true}}
+    {{/if}}
+{{/each}}
+
 
 
 
