@@ -21,7 +21,7 @@ app.set('view engine', 'handlebars');
 app.get('/', function (req, res) {
     
     var hbsObject = {
-        burgers: [{name: 'blue cheese', id:1}, {name: 'bacon cheese', id:2}]
+        burgers: [{name: 'blue cheese', id:1, devoured:false}, {name: 'bacon cheese', id:2, devoured:false}]
     }
     console.log(hbsObject);
     res.render('home', hbsObject);

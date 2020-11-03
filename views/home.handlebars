@@ -7,10 +7,20 @@
 
 <button>Save a New Burger!</button>
 
-{{#each burgers}}
+{{!-- {{#each burgers}}
     <h1 class="yourClass">{{this.name}}</h1>
 
+{{/each}} --}}
+
+<ul>
+{{#each burgers}}
+<li>
+    <p>Burger Name: {{this.name}}</p>
+    <p>Devoured: {{this.devoured}}</p>
+    
+</li>
 {{/each}}
+</ul>
 
 
 
@@ -20,9 +30,7 @@
 
 
 
-<script>
 
-    // on clicks an ajax calls!!!
 
-    // ajax call smacks /api/burger route!!! 
-</script>
+
+   
