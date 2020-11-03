@@ -7,13 +7,13 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 //Setting up routes with logic
-router.get("/", function(req,res){
+router.get("/", function(req, res){
     burger.all(function(data){
         var hbsObject = {
-            burgers:data
+            burgers: data
         };
         console.log(hbsObject);
-        res.render("index", hbsObject);
+        res.render("home", hbsObject);
     });
 });
 

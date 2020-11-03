@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
     var hbsObject = {
         burgers: [{name: 'blue cheese', id:1}, {name: 'bacon cheese', id:2}]
     }
-    
+    console.log(hbsObject);
     res.render('home', hbsObject);
 });
 
