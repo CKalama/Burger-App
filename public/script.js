@@ -9,7 +9,7 @@ $(function() {
         };
 
     //Setting up PUT request
-    $.ajax("api/burgers/" + id, {
+    $.ajax("/api/burgers/" + id, {
         type:"PUT",
         data:eatStatus
     }).then(
@@ -20,6 +20,19 @@ $(function() {
         }
     );
     });
+
+    // $(".create-burger").on("submit", function(event){
+    //     //Have to prevent default
+    //     event.preventDefault();
+
+    //     var newBurger = {
+    //         name: $("#burger-text").val().trim(),
+    //         devoured: 
+    //     }
+        
+    // })
+
+
 
 
 
