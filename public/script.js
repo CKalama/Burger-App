@@ -9,8 +9,17 @@ $(function() {
         };
 
     //Setting up PUT request
-    $.ajax()
-    })
+    $.ajax("api/burgers/" + id, {
+        type:"PUT",
+        data:eatStatus
+    }).then(
+        function() {
+            console.log("Changed eat status: ", newEat);
+            //This will reload the page to get updated list
+            location.reload();
+        }
+    );
+    });
 
 
 
