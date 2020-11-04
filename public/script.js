@@ -21,16 +21,25 @@ $(function() {
     );
     });
 
-    // $(".create-burger").on("submit", function(event){
-    //     //Have to prevent default
-    //     event.preventDefault();
+    $(".create-burger").on("submit", function(event){
+        //Have to prevent default
+        event.preventDefault();
 
-    //     var newBurger = {
-    //         name: $("#burger-text").val().trim(),
-    //         devoured: 
-    //     }
-        
-    // })
+        var newBurger = {
+            name: $("#burger-text").val().trim(),
+            devoured: false
+        };
+
+        $.ajax({
+            type:"POST",
+            url: "/api/burgers/",
+            data: newBurger
+        }).then(function(data){
+            console.log("New Burger" + newBurger)
+            location.reload();
+
+        })
+    })
 
 
 

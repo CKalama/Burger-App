@@ -18,26 +18,19 @@ app.use(express.json());
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
  
-app.get('/', function (req, res) {
+// app.get('/', function (req, res) {
     
-    var hbsObject = {
-        burgers: [{name: 'blue cheese', id:1, devoured:false}, {name: 'bacon cheese', id:2, devoured:false}, {name:"BLT", id:3, devoured:true}]
-    }
-    console.log(hbsObject);
-    res.render('home', hbsObject);
-});
+//     var hbsObject = {
+//         burgers: [{name: 'blue cheese', id:1, devoured:false}, {name: 'bacon cheese', id:2, devoured:false}, {name:"BLT", id:3, devoured:true}]
+//     }
+//     console.log(hbsObject);
+//     res.render('home', hbsObject);
+// });
 
-app.post('/api/burger', function (req, res) {
 
-    // do conection.query and save req.body to the dB!!! u made a burger!!
-
-});
+var routes = require('./controllers/burger_controller')
+app.use(routes);
  
 app.listen(3000, function() {
     console.log("Server listening at http://localhost:" + 3000);
 });
-
-// app.get()
-
-
-// res.render('home');

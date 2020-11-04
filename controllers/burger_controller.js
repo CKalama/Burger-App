@@ -17,11 +17,14 @@ router.get("/", function(req, res){
     });
 });
 
-router.post("/api/burgers", function (req, res){
+router.post("/api/burgers/", function (req, res){
+
+    console.log('we hit the post route!!!', req.body)
+
     burger.create([
         "burger_name" , "devoured"
     ], [
-        req.body.burger_name, req.body.devoured
+        req.body.name, false
     ], function(result){
         // Send back the ID of the new quote
         res.json({ id: result.insertId})
@@ -29,12 +32,14 @@ router.post("/api/burgers", function (req, res){
 });
 
 router.put("/api/burgers/:id", function(req, res){
+    console.log('WE HIT HTE PUT ROUTE!!!')
+    
     var condition = "id = " + req.params.id;
 
     console.log("condition", condition);
 
     burger.update({
-        devoured:req.body.devoured
+        devoured: true
     }, condition, function(result){
         if (result.changedRows == 0) {
             //If no rows were changed, it will send back a 404 because ID must not exist. 
